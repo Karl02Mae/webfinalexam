@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     Box,
     Typography,
@@ -7,6 +7,7 @@ import {
 } from '@mui/material';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import { db } from '../utils/firebase';
 
 import NewTasks from './NewTasks';
 
@@ -91,6 +92,19 @@ const style = {
 
 export default function TaskContainer() {
 
+    const [NTask, setNTask] = useState([]);
+    const current = new Date();
+    const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
+
+    useEffect(() => {
+        db.collection('Tasks').orderBy('DateCreated', 'desc').onSnapshot(snapshot => {
+            setNTask(snapshot.docs.map(doc => ({
+                data: doc.data(),
+                id: doc.id
+            })))
+        })
+    }, []);
+
     const [NTC, setNTC] = useState(false);
     const [TTC, setTTC] = useState(false);
     const [UTC, setUTC] = useState(false);
@@ -135,7 +149,25 @@ export default function TaskContainer() {
                     <ArrowDropDownIcon />
                 )}
                 <Typography sx={style.NewTask__Text} onClick={handleClickNTC}>New Tasks</Typography>
-                <NewTasks show={NTC} />
+            </Box>
+            <Box sx={style.NewTask__List}>
+                {
+                    NTask.map(({ id, data }) => {
+                        if (data.DateCreated === date) {
+                            return <NewTasks
+                                show={NTC}
+                                key={id}
+                                id={id}
+                                Todo={data.Todo}
+                                Date={data.TaskDate}
+                                Category={data.Category}
+                            />
+                        } else {
+                            return <div key={id}></div>
+                        }
+                    })
+                }
+
             </Box>
             <Divider />
             <Box sx={style.TodayTask}>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     Box,
     Typography,
@@ -6,9 +6,6 @@ import {
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GoogleIcon from '@mui/icons-material/Google';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 
 
 const style = {
@@ -27,7 +24,7 @@ const style = {
         display: 'flex',
         flexDirection: "column",
         textAlign: "center",
-        padding: {lg: 7, xs: 3 },
+        padding: { lg: 7, xs: 3 },
         justifyContent: 'center',
     },
     text1: {
@@ -39,7 +36,7 @@ const style = {
     text2: {
         color: 'text.primary',
         fontSize: { lg: "15px", xs: "10px" },
-        
+
     },
     contactContainer: {
         flexDirection: "column",
@@ -74,44 +71,40 @@ const style = {
 
 export default function Footer() {
 
-    const [language, setLanguage] = useState('');
-    const handleChange = (event) => {
-        setLanguage(event.target.value);
-    }
     return (
         <Box sx={style.root}>
-           <Box sx={style.row}>
-               
-               <Box sx={style.column}>
-                   <Typography sx={style.text1}>About</Typography>
-                   <Typography sx={style.text2}>Blog</Typography>
-                   <Typography sx={style.text2}>Privacy</Typography>
-                   <Typography sx={style.text2}>Terms and Policy</Typography>
-                   <Typography sx={style.text2}>Ads</Typography>
-                   <Typography sx={style.text2}>Careers</Typography>
-               </Box>
-               <Box sx={style.column}>
-                   <Typography sx={style.text1}>Members</Typography>
-                   <Typography sx={style.text2}>Karl Christopher Samelo</Typography>
-                   <Typography sx={style.text2}>Sara Ramos</Typography>
-                   <Typography sx={style.text2}>Junnie M. Adriano</Typography>
-                   <Typography sx={style.text2}>Russel May Limas</Typography>
-                   <Typography sx={style.text2}>Arriane Barredo</Typography>
-               </Box>
-               <Box sx={style.column}>
+            <Box sx={style.row}>
+
+                <Box sx={style.column}>
+                    <Typography sx={style.text1}>About</Typography>
+                    <Typography sx={style.text2}>Blog</Typography>
+                    <Typography sx={style.text2}>Privacy</Typography>
+                    <Typography sx={style.text2}>Terms and Policy</Typography>
+                    <Typography sx={style.text2}>Ads</Typography>
+                    <Typography sx={style.text2}>Careers</Typography>
+                </Box>
+                <Box sx={style.column}>
+                    <Typography sx={style.text1}>Members</Typography>
+                    <Typography sx={style.text2}>Karl Christopher Samelo</Typography>
+                    <Typography sx={style.text2}>Sara Ramos</Typography>
+                    <Typography sx={style.text2}>Junnie M. Adriano</Typography>
+                    <Typography sx={style.text2}>Russel May Limas</Typography>
+                    <Typography sx={style.text2}>Arriane Barredo</Typography>
+                </Box>
+                <Box sx={style.column}>
                     <Typography sx={style.text1}>Group 6</Typography>
-                   <Typography sx={style.text2}>Todo List App</Typography>
-                   
-               </Box>
-           </Box>
-           <Box sx={style.contactContainer}>
-               <Typography sx={style.contactText}>Contact Us</Typography>
-               <Box sx={style.iconContainer}>
-                   <FacebookIcon sx={style.icons} />
-                   <GoogleIcon sx={style.icons} />
-                   <TwitterIcon  sx={style.icons}/>
-               </Box>
-           </Box>
+                    <Typography sx={style.text2}>Todo List App</Typography>
+
+                </Box>
+            </Box>
+            <Box sx={style.contactContainer}>
+                <Typography sx={style.contactText}>Contact Us</Typography>
+                <Box sx={style.iconContainer}>
+                    <FacebookIcon sx={style.icons} />
+                    <GoogleIcon sx={style.icons} />
+                    <TwitterIcon sx={style.icons} />
+                </Box>
+            </Box>
         </Box>
     )
 }
