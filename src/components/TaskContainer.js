@@ -21,7 +21,7 @@ const style = {
         marginTop: '20px',
         marginLeft: 'auto',
         marginRight: 'auto',
-        backgroundColor: 'white',
+        backgroundColor: (theme) => theme.palette.boxContainer.main,
         border: '1px solid #f1f1f1',
         boxShadow: '5',
         borderRadius: '5px',
@@ -154,20 +154,20 @@ export default function TaskContainer() {
             </Box>
             <Divider />
             <Box sx={style.Header}>
-                <Typography sx={style.HeaderText}>Task</Typography>
-                <Typography sx={style.HeaderText}>Category</Typography>
-                <Typography sx={style.HeaderText}>Date</Typography>
+                <Typography color="text.primary" sx={style.HeaderText}>Task</Typography>
+                <Typography color="text.primary" sx={style.HeaderText}>Category</Typography>
+                <Typography color="text.primary" sx={style.HeaderText}>Date</Typography>
             </Box>
             <Divider />
-            <Box sx={style.NewTask}>
+            <Box color="text.primary" sx={style.NewTask}>
                 {NTC === false ? (
                     <ArrowDropUpIcon />
                 ) : (
                     <ArrowDropDownIcon />
                 )}
-                <Typography sx={style.NewTask__Text} onClick={handleClickNTC}>New Tasks</Typography>
+                <Typography color="text.primary" sx={style.NewTask__Text} onClick={handleClickNTC}>New Tasks</Typography>
             </Box>
-            <Box sx={style.NewTask__List}>
+            <Box color="text.primary" sx={style.NewTask__List}>
                 {
                     NTask.map(({ id, data }) => {
                         if (data.DateCreated === date) {
@@ -187,22 +187,22 @@ export default function TaskContainer() {
 
             </Box>
             <Divider />
-            <Box sx={style.TodayTask}>
+            <Box color="text.primary" sx={style.TodayTask}>
                 {TTC === false ? (
                     <ArrowDropUpIcon />
                 ) : (
                     <ArrowDropDownIcon />
                 )}
-                <Typography sx={style.TodayTask__Text} onClick={handleClickTTC}>Today</Typography>
+                <Typography color="text.primary" sx={style.TodayTask__Text} onClick={handleClickTTC}>Today</Typography>
             </Box>
             <Divider />
-            <Box sx={style.UpcomingTask}>
+            <Box color="text.primary" sx={style.UpcomingTask}>
                 {UTC === false ? (
                     <ArrowDropUpIcon />
                 ) : (
                     <ArrowDropDownIcon />
                 )}
-                <Typography sx={style.UpcomingTask__Text} onClick={handleClickUTC}>Upcoming</Typography>
+                <Typography color="text.primary" sx={style.UpcomingTask__Text} onClick={handleClickUTC}>Upcoming</Typography>
             </Box>
         </Box>
     )

@@ -7,7 +7,7 @@ const theme = (isDarkMode) => ({
             contrastText: 'rgba(0, 0, 0, 0.87)',
         },
         secondary: {
-            main: '#F1BFCB',
+            main: "#c28291", //'#F1BFCB',
             contrastText: 'rgba(0, 0, 0, 0.87)',
         },
         thirtiary: {
@@ -16,6 +16,9 @@ const theme = (isDarkMode) => ({
         background: {
             default: isDarkMode ? "#1a1a1a" : '#f0f0f0',
           },
+        boxContainer: {
+            main: isDarkMode ? "#4f4f4f" : '#ffffff',
+        },
         info: {
             main: '#2196f3',
         },
