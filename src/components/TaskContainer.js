@@ -88,6 +88,17 @@ const style = {
         fontWeight: '700',
         cursor: 'pointer',
     },
+
+    Header: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        marginLeft: '50px',
+        marginRight: '50px',
+    },
+
+    HeaderText: {
+        fontWeight: '700',
+    }
 }
 
 export default function TaskContainer() {
@@ -140,6 +151,12 @@ export default function TaskContainer() {
                     sx={style.TaskHeader__AddTask}
                     variant='contained'
                 >Add Task</Button>
+            </Box>
+            <Divider />
+            <Box sx={style.Header}>
+                <Typography sx={style.HeaderText}>Task</Typography>
+                <Typography sx={style.HeaderText}>Category</Typography>
+                <Typography sx={style.HeaderText}>Date</Typography>
             </Box>
             <Divider />
             <Box sx={style.NewTask}>
