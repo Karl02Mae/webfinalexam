@@ -6,23 +6,26 @@ const style = {
     container: {
         backgroundColor: "#9E5E93",
         boxShadow: '5',
-        padding: 1,
         display: "flex",
         flexDirection: "column",
         alignItems: "center"
     },
     textHeader: {
-        color: "white",
-        fontSize: "1.5rem",
+        color: "#ffffff",
+        fontWeight: 800,
+        fontSize: { lg: "25px", xs: "20px" },
+        textShadow: "2px 2px 4px #000000",
     },
     mid: {
         display: "flex",
         flexDirection: "row",
+        marginBottom: 2,
     },
     tabText: {
         color: "white",
-        margin: 2,
-        fontSize: "1rem"
+        marginLeft: 1,
+        marginRight: 1,
+        fontSize: "1rem",
     }
 }
 

@@ -14,6 +14,7 @@ import Select from '@mui/material/Select';
 const style = {
     root: {
         alignItems: "center",
+        backgroundColor: "#f0f0f0"
     },
     row: {
         flexDirection: "row",
@@ -32,12 +33,12 @@ const style = {
     text1: {
         color: (theme) => theme.palette.secondary.main,
         fontWeight: 800,
-        fontSize: { lg: "25px", xs: "20px" },
+        fontSize: { lg: "20px", xs: "15px" },
         margin: 2,
     },
     text2: {
         color: 'text.primary',
-        fontSize: { lg: "20px", xs: "15px" },
+        fontSize: { lg: "15px", xs: "10px" },
         
     },
     contactContainer: {
@@ -45,12 +46,12 @@ const style = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 10,
+        padding: 3,
     },
     contactText: {
         color: (theme) => theme.palette.secondary.main,
         fontWeight: 800,
-        fontSize: "25px",
+        fontSize: "20px",
         margin: 2,
     },
     iconContainer: {
@@ -98,19 +99,9 @@ export default function Footer() {
                    <Typography sx={style.text2}>Arriane Barredo</Typography>
                </Box>
                <Box sx={style.column}>
-                    <FormControl sx={style.formControl}>
-                        <Typography align="justify" sx={style.text1}>Language</Typography>
-                        <Select
-                        defaultValue={10}
-                        onChange={handleChange}
-                        >
-                        <MenuItem value={10}><em>English (USA)</em></MenuItem>
-                        <MenuItem value={20}>English (UK)</MenuItem>
-                        <MenuItem value={30}>Filipino</MenuItem>
-                        <MenuItem value={40}>Visaya</MenuItem>
-                        <MenuItem value={50}>Chinese</MenuItem>
-                        </Select>
-                    </FormControl>
+                    <Typography sx={style.text1}>Group 6</Typography>
+                   <Typography sx={style.text2}>Todo List App</Typography>
+                   
                </Box>
            </Box>
            <Box sx={style.contactContainer}>
