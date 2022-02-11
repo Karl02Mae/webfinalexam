@@ -4,7 +4,7 @@ import { AppBar, Box, Toolbar, Typography, Link } from "@mui/material";
 
 const style = {
     container: {
-        backgroundColor: "#9E5E93",
+        backgroundColor: (theme) => theme.palette.primary.main,
         boxShadow: '5',
         display: "flex",
         flexDirection: "column",
