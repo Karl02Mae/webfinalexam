@@ -11,7 +11,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 const style = {
     root: {
         alignItems: "center",
-        backgroundColor: "#f0f0f0"
+        backgroundColor: (theme) => theme.palette.background.default,
     },
     row: {
         flexDirection: "row",
