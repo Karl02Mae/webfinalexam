@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import WebFont from 'webfontloader'; 
+
+WebFont.load({
+  custom: {
+    families: ["NgutangDong","MontserratRegular", "MontserratBold"],
+  },
+})
 
 ReactDOM.render(
   <React.StrictMode>

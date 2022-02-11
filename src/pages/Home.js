@@ -9,6 +9,9 @@ import TaskContainer from '../components/TaskContainer';
 import { useSelector, useDispatch } from "react-redux";
 import { toggleTheme,  getTheme } from "../redux/actions/uiAction";
 
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
+
 const style = {
     root: {
         display: 'flex',
@@ -41,14 +44,14 @@ export default function Home() {
     return (
         <Box sx={style.root}>
             <Box sx={style.themeContainer}>
+                
                 <Button 
                 variant="contained" 
-                color="primary" 
-                sx={{alignSelf: "flex-end", color: (theme) => theme.palette.secondary.main, }} 
+                sx={{alignSelf: "flex-end", flexDirection: "column", borderRadius: 9, alignItems: "center" }} 
                 onClick={_toggletheme}
-            >
-                <Typography sx={{color: "white"}}>{ui.isDarkMode ? "Light Theme" : "Dark Theme"}</Typography>
-            </Button>
+                >
+                    <Typography sx={{color: "white"}}> {ui.isDarkMode ? "Light Theme" : "Dark Theme"}</Typography>
+                </Button>
             </Box>
             <TaskContainer />
         </Box>
