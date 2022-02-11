@@ -8,6 +8,8 @@ import {
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
+import NewTasks from './NewTasks';
+
 
 const style = {
     root: {
@@ -133,6 +135,7 @@ export default function TaskContainer() {
                     <ArrowDropDownIcon />
                 )}
                 <Typography sx={style.NewTask__Text} onClick={handleClickNTC}>New Tasks</Typography>
+                <NewTasks show={NTC} />
             </Box>
             <Divider />
             <Box sx={style.TodayTask}>
