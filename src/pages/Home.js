@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
     Box,
-    Typography,
-    Button
 } from '@mui/material';
 import TaskContainer from '../components/TaskContainer';
 
 import Theme from "../components/ModeSwitch"
+import { HelmetProvider, Helmet } from 'react-helmet-async';
 
 const style = {
     root: {
@@ -28,17 +27,42 @@ const style = {
 
 export default function Home() {
     return (
-        <Box sx={style.root}>
-            <Box sx={style.themeContainer}>
-                <Box 
-                    variant="contained" 
-                    sx={{alignSelf: "flex-end", }} 
-                >
-                    <Theme />
+        <HelmetProvider>
+            <Box sx={style.root}>
+                <Helmet>
+                    <title>Todo List - Group 6</title>
+                    <meta
+                        name="description"
+                        content="Welcome to Todo List!. You are currently viewing the home page of Todo List! "
+                        data-react-helmet="true"
+                    />
+                    <meta
+                        property="og:description"
+                        content="Welcome to Todo List!. You are currently viewing the home page of Todo List! "
+                        data-react-helmet="true"
+                    />
+                    <meta
+                        name="keywords"
+                        content="TodoList, todo list, todolist, TODOLIST, Group6"
+                        data-react-helmet="true"
+                    />
+                    <meta
+                        property="og:title"
+                        content="Todo List - Group 6"
+                        data-react-helmet="true"
+                    />
+                </Helmet>
+                <Box sx={style.themeContainer}>
+                    <Box
+                        variant="contained"
+                        sx={{ alignSelf: "flex-end", }}
+                    >
+                        <Theme />
+                    </Box>
+
                 </Box>
-            
+                <TaskContainer />
             </Box>
-            <TaskContainer />
-        </Box>
+        </HelmetProvider>
     )
 }
