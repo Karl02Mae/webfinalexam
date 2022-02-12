@@ -19,7 +19,7 @@ const style = {
     root: {
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '90vh',
+        minHeight: '60vh',
         maxHeight: 'fit-content',
         width: { lg: "80%", xs: "95%" },
         marginTop: '20px',
