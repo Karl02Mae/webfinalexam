@@ -10,6 +10,8 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { db } from '../utils/firebase';
 
 import NewTasks from './NewTasks';
+import TodayTask from './TodayTask';
+import AddTask from './AddTask';
 
 
 const style = {
@@ -106,6 +108,7 @@ export default function TaskContainer() {
     const [NTask, setNTask] = useState([]);
     const current = new Date();
     const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
+    const [show, setShow] = useState(false);
 
     useEffect(() => {
         db.collection('Tasks').orderBy('DateCreated', 'desc').onSnapshot(snapshot => {
@@ -150,8 +153,10 @@ export default function TaskContainer() {
                 <Button
                     sx={style.TaskHeader__AddTask}
                     variant='contained'
+                    onClick={() => setShow(true)}
                 >Add Task</Button>
             </Box>
+            <AddTask show={show} onClose={() => setShow(false)} />
             <Divider />
             <Box sx={style.Header}>
                 <Typography color="text.primary" sx={style.HeaderText}>Task</Typography>
@@ -195,6 +200,25 @@ export default function TaskContainer() {
                 )}
                 <Typography color="text.primary" sx={style.TodayTask__Text} onClick={handleClickTTC}>Today</Typography>
             </Box>
+            <Box color="text.primary" sx={style.TodayTask__List}>
+                {
+                    NTask.map(({ id, data }) => {
+                        if (data.TaskDate === date) {
+                            return <TodayTask
+                                show={TTC}
+                                key={id}
+                                id={id}
+                                Todo={data.Todo}
+                                Date={data.TaskDate}
+                                Category={data.Category}
+                            />
+                        } else {
+                            return <div key={id}></div>
+                        }
+                    })
+                }
+
+            </Box>
             <Divider />
             <Box color="text.primary" sx={style.UpcomingTask}>
                 {UTC === false ? (
@@ -203,6 +227,25 @@ export default function TaskContainer() {
                     <ArrowDropDownIcon />
                 )}
                 <Typography color="text.primary" sx={style.UpcomingTask__Text} onClick={handleClickUTC}>Upcoming</Typography>
+            </Box>
+            <Box color="text.primary" sx={style.TodayTask__List}>
+                {
+                    NTask.map(({ id, data }) => {
+                        if (data.TaskDate > date) {
+                            return <TodayTask
+                                show={UTC}
+                                key={id}
+                                id={id}
+                                Todo={data.Todo}
+                                Date={data.TaskDate}
+                                Category={data.Category}
+                            />
+                        } else {
+                            return <div key={id}></div>
+                        }
+                    })
+                }
+
             </Box>
         </Box>
     )
