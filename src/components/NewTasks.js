@@ -13,13 +13,7 @@ const style = {
         justifyContent: 'space-between',
     },
     Todo: {
-        fontSize: { lg: "1.2rem", xs: "0.7rem" }
-    },
-    Category: {
-        fontSize: { lg: "1.2rem", xs: "0.7rem" }
-    },
-    Date: {
-        fontSize: { lg: "1.2rem", xs: "0.7rem" }
+        
     },
 }
 
