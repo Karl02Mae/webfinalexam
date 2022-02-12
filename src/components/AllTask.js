@@ -68,7 +68,7 @@ export default function AllTask(props) {
                   </TableCell>
                   <TableCell align="center"><Typography sx={style.todo}>{props.Date}</Typography></TableCell>
                   <TableCell align="right">
-                  <Button variant="contained" sx={{width: { lg: 100, xs: 45}, height: {lg: 40, xs: 25}}} onClick={handleDelete}>Delete</Button>
+                  <Button variant="contained" sx={{width: { lg: 100, xs: 45}, height: {lg: 40, xs: 25}}} onClick={handleDelete}><Typography sx={{color: "white"}}>Delete</Typography></Button>
                   </TableCell>
                 </TableRow>
               </TableBody>
