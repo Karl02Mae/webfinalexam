@@ -16,7 +16,7 @@ const style = {
         flexDirection: 'column',
         position: 'fixed',
         height: '50vh',
-        width: '20%',
+        width: {lg: "20%", xs: {lg: "55%"}},
         top: '0',
         bottom: '0',
         left: '0',

@@ -21,7 +21,7 @@ const style = {
         flexDirection: 'column',
         minHeight: '90vh',
         maxHeight: 'fit-content',
-        width: { lg: "80%", xs: "100%" },
+        width: { lg: "90%", xs: "100%" },
         marginTop: '20px',
         marginLeft: 'auto',
         marginRight: 'auto',

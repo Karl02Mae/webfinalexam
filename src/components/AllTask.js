@@ -49,7 +49,7 @@ export default function AllTask(props) {
                 <Typography sx={style.Todo}>{props.Todo}</Typography>
                 <Typography sx={style.Category}>{props.Category}</Typography>
                 <Typography sx={style.Date}>{props.Date}</Typography>
-                <Button variant="contained" onClick={handleDelete}>Delete</Button>
+                <Button variant="contained" sx={{width: { lg: 100, xs: 45}, height: {lg: 40, xs: 25}}} onClick={handleDelete}>Delete</Button>
             </Box>
         )
     } else if (props.show === false) {
