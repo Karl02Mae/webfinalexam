@@ -31,11 +31,11 @@ const style = {
     },
 
     TaskHeader__AddTask: {
-        margin: '10px',
+        margin: '15px',
         marginLeft: '20px',
         padding: '5px',
-        height: '30px',
-        width: '100px',
+        height: {lg:'30px', xs: "25px"},
+        width: {lg: '100px', xs: "95"}
     },
 
     NewTask: {
@@ -47,7 +47,7 @@ const style = {
         paddingRight: '10px',
         width: 'fit-content',
         "&:hover": {
-            backgroundColor: '#f0f0f0',
+            backgroundColor: {lg: '#f0f0f0', xs: "none"}
         }
     },
 
@@ -98,8 +98,8 @@ const style = {
     Header: {
         display: 'flex',
         justifyContent: 'space-between',
-        marginLeft: '50px',
-        marginRight: '50px',
+        marginLeft: {lg: '50px', xs: "20px"},
+        marginRight: {lg: '80px', xs: "35px"}
     },
 
     HeaderText: {
@@ -169,7 +169,7 @@ export default function TaskContainer() {
                     variant='contained'
                     color="secondary"
                     onClick={() => setShow(true)}
-                ><Typography sx={{ fontSize: "1rem", color: "white" }}> Add Task </Typography></Button>
+                ><Typography sx={{ fontSize: {lg: "1rem", xs: "0.9rem"}, color: "white" }}> Add Task </Typography></Button>
             </Box>
             <AddTask show={show} onClose={() => setShow(false)} />
             <Divider />

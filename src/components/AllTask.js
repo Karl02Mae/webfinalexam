@@ -3,6 +3,11 @@ import {
     Box,
     Typography,
     Button,
+    Table,
+  TableBody,
+  TableContainer,
+  TableCell,
+  TableRow,
 } from '@mui/material';
 import { db } from '../utils/firebase';
 
@@ -14,18 +19,10 @@ const style = {
         marginRight: '30px',
         justifyContent: 'space-between',
     },
-    Todo: {
+    todo: {
         fontSize: { lg: "1.2rem", xs: "0.7rem" },
-        fontWeight: 500,
-    },
-    Category: {
-        fontSize: { lg: "1.2rem", xs: "0.7rem" },
-        fontWeight: 500,
-    },
-    Date: {
-        fontSize: { lg: "1.2rem", xs: "0.7rem" },
-        fontWeight: 500,
-    },
+        marginLeft: {lg: 5, xs: "none"}
+      },
 }
 
 export default function AllTask(props) {
@@ -45,12 +42,38 @@ export default function AllTask(props) {
 
     if (props.show === true) {
         return (
-            <Box sx={style.AllTaskCont}>
-                <Typography sx={style.Todo}>{props.Todo}</Typography>
-                <Typography sx={style.Category}>{props.Category}</Typography>
-                <Typography sx={style.Date}>{props.Date}</Typography>
-                <Button variant="contained" sx={{width: { lg: 100, xs: 45}, height: {lg: 40, xs: 25}}} onClick={handleDelete}>Delete</Button>
-            </Box>
+            <TableContainer sx={{ display: "flex", width: { lg: "95%", xs: "96%" } }}>
+            <Table sx={{ tableLayout: "fixed" }}>
+              <TableBody>
+                <TableRow
+                  sx={{
+                    cursor: "pointer",
+                    "th,td": { border: 0 },
+                    "td:first-of-type": {
+                      borderTopLeftRadius: "10px",
+                      borderBottomLeftRadius: "10px",
+                    },
+                    "td:last-of-type": {
+                      borderTopRightRadius: "10px",
+                      borderBottomRightRadius: "10px",
+                    },
+                  }}
+                >
+                  <TableCell align="left" scope="row">
+                    <Typography sx={style.todo} >{props.Todo}</Typography>
+                  </TableCell>
+    
+                  <TableCell align="center">
+                    <Typography sx={style.todo}>{props.Category}</Typography>
+                  </TableCell>
+                  <TableCell align="center"><Typography sx={style.todo}>{props.Date}</Typography></TableCell>
+                  <TableCell align="right">
+                  <Button variant="contained" sx={{width: { lg: 100, xs: 45}, height: {lg: 40, xs: 25}}} onClick={handleDelete}>Delete</Button>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </TableContainer>
         )
     } else if (props.show === false) {
         return (
