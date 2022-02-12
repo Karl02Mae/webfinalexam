@@ -2,6 +2,10 @@
   font-family: "NgutangDong";
   src: url("./assets/font/Ngutang-Dong.woff") format("woff");
 }
+@font-face {
+  font-family: "MontserratRegular";
+  src: url("./assets/font/MontserratRegular.woff") format("woff");
+}
 
 body {
   margin: 0;

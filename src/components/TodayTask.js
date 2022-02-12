@@ -12,6 +12,21 @@ const style = {
         marginRight: '30px',
         justifyContent: 'space-between',
     },
+    Todo: {
+        fontSize: { lg: "1.2rem", xs: "0.7rem" },
+        fontFamily: "NgutangDong",
+        fontWeight: 500,
+    },
+    Category: {
+        fontSize: { lg: "1.2rem", xs: "0.7rem" },
+        fontFamily: "NgutangDong",
+        fontWeight: 500,
+    },
+    Date: {
+        fontSize: { lg: "1.2rem", xs: "0.7rem" },
+        fontFamily: "NgutangDong",
+        fontWeight: 500,
+    },
 }
 
 export default function TodayTask(props) {
