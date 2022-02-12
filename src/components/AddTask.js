@@ -25,7 +25,7 @@ const style = {
         marginLeft: 'auto',
         marginRight: 'auto',
         marginTop: '80px',
-        backgroundColor: 'white',
+        backgroundColor: (theme) => theme.palette.boxContainer.main,
         border: 'solid 1px #f0f0f0',
         borderRadius: '15px',
         padding: '20px',
