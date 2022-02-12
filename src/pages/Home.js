@@ -31,6 +31,7 @@ export default function Home() {
             <Box sx={style.root}>
                 <Helmet>
                     <title>Todo List - Group 6</title>
+                    <link rel='canonical' href='https://todolistgroup6.netlify.app/' />
                     <meta
                         name="description"
                         content="Welcome to Todo List!. You are currently viewing the home page of Todo List! "
