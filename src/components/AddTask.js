@@ -25,7 +25,7 @@ const style = {
         marginLeft: 'auto',
         marginRight: 'auto',
         marginTop: '80px',
-        backgroundColor: 'rgba(0,0,0,0.5)',
+        backgroundColor: 'white',
         border: 'solid 1px #f0f0f0',
         borderRadius: '15px',
         padding: '20px',
@@ -85,6 +85,7 @@ export default function AddTask(props) {
                     <MenuItem value={'Event'}>Event</MenuItem>
                 </Select>
             </Box>
+
             <Box sx={style.Add__Buttons}>
                 <Button onClick={handleAddTask}>Add</Button>
                 <Button onClick={props.onClose}>Cancel</Button>

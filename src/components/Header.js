@@ -13,9 +13,10 @@ const style = {
     textHeader: {
         color: "#ffffff",
         fontWeight: 800,
-        fontSize: { lg: "25px", xs: "20px" },
+        fontSize: { lg: "30px", xs: "25px" },
         textShadow: "2px 2px 4px #000000",
         fontFamily: "NgutangDong",
+        marginTop: 1,
     },
     mid: {
         display: "flex",

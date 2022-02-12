@@ -19,12 +19,11 @@ const style = {
         display: 'flex',
         flexDirection: 'column',
         height: '90vh',
-        width: '80%',
+        width: { lg: "80%", xs: "100%"},
         marginTop: '20px',
         marginLeft: 'auto',
         marginRight: 'auto',
         backgroundColor: (theme) => theme.palette.boxContainer.main,
-        border: '1px solid #f1f1f1',
         boxShadow: '5',
         borderRadius: '5px',
     },
@@ -79,16 +78,19 @@ const style = {
     NewTask__Text: {
         fontWeight: '700',
         cursor: 'pointer',
+        fontSize: { lg: "1.2rem", xs:"0.8rem"}
     },
 
     TodayTask__Text: {
         fontWeight: '700',
         cursor: 'pointer',
+        fontSize: { lg: "1.2rem", xs:"0.8rem"}
     },
 
     UpcomingTask__Text: {
         fontWeight: '700',
         cursor: 'pointer',
+        fontSize: { lg: "1.2rem", xs:"0.8rem"}
     },
 
     Header: {
@@ -99,7 +101,8 @@ const style = {
     },
 
     HeaderText: {
-        fontWeight: '700',
+        fontWeight: { lg: '700', xs: "none"},
+        fontSize: { lg: "1rem", xs: "0.7rem" },
     }
 }
 
@@ -153,8 +156,9 @@ export default function TaskContainer() {
                 <Button
                     sx={style.TaskHeader__AddTask}
                     variant='contained'
+                    color="secondary"
                     onClick={() => setShow(true)}
-                >Add Task</Button>
+                ><Typography sx={{fontSize: "1rem", color: "white"}}> Add Task </Typography></Button>
             </Box>
             <AddTask show={show} onClose={() => setShow(false)} />
             <Divider />

@@ -6,8 +6,7 @@ import {
 } from '@mui/material';
 import TaskContainer from '../components/TaskContainer';
 
-import { useSelector, useDispatch } from "react-redux";
-import { toggleTheme,  getTheme } from "../redux/actions/uiAction";
+import Theme from "../components/ModeSwitch"
 
 const style = {
     root: {
@@ -28,26 +27,16 @@ const style = {
 }
 
 export default function Home() {
-    const dispatch = useDispatch();
-    const ui = useSelector((state) => state.ui);
-    useEffect(() => {
-        dispatch(getTheme());
-    }, [dispatch]);
-
-    const _toggletheme = () => {
-        dispatch(toggleTheme(!ui.isDarkMode));
-    };
     return (
         <Box sx={style.root}>
             <Box sx={style.themeContainer}>
-                <Button 
-                variant="contained" 
-                color="primary" 
-                sx={{alignSelf: "flex-end", color: (theme) => theme.palette.secondary.main, }} 
-                onClick={_toggletheme}
-            >
-                <Typography sx={{color: "white"}}>{ui.isDarkMode ? "Light Theme" : "Dark Theme"}</Typography>
-            </Button>
+                <Box 
+                    variant="contained" 
+                    sx={{alignSelf: "flex-end", }} 
+                >
+                    <Theme />
+                </Box>
+            
             </Box>
             <TaskContainer />
         </Box>

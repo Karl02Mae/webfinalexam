@@ -3,7 +3,7 @@ const theme = (isDarkMode) => ({
         mode: isDarkMode ? 'dark' : 'light',
         primary: {
             //main: '#639BC8',
-            main: isDarkMode ? "#3b1c35" : '#9E5E93',
+            main: isDarkMode ? "#522749" : '#9E5E93',
             contrastText: 'rgba(0, 0, 0, 0.87)',
         },
         secondary: {
@@ -17,7 +17,7 @@ const theme = (isDarkMode) => ({
             default: isDarkMode ? "#1a1a1a" : '#f0f0f0',
           },
         boxContainer: {
-            main: isDarkMode ? "#4f4f4f" : '#ffffff',
+            main: isDarkMode ? "#333232" : '#ffffff',
         },
         info: {
             main: '#2196f3',
