@@ -87,8 +87,8 @@ export default function AddTask(props) {
             </Box>
 
             <Box sx={style.Add__Buttons}>
-                <Button onClick={handleAddTask}>Add</Button>
-                <Button onClick={props.onClose}>Cancel</Button>
+                <Button variant="contained" onClick={handleAddTask}>Add</Button>
+                <Button variant="contained" onClick={props.onClose}>Cancel</Button>
             </Box>
         </Box>
     } else {
