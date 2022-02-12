@@ -12,14 +12,16 @@ import { db } from '../utils/firebase';
 import NewTasks from './NewTasks';
 import TodayTask from './TodayTask';
 import AddTask from './AddTask';
+import AllTask from './AllTask';
 
 
 const style = {
     root: {
         display: 'flex',
         flexDirection: 'column',
-        height: '90vh',
-        width: { lg: "80%", xs: "100%"},
+        minHeight: '90vh',
+        maxHeight: 'fit-content',
+        width: { lg: "80%", xs: "100%" },
         marginTop: '20px',
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -78,19 +80,19 @@ const style = {
     NewTask__Text: {
         fontWeight: '700',
         cursor: 'pointer',
-        fontSize: { lg: "1.2rem", xs:"0.8rem"}
+        fontSize: { lg: "1.2rem", xs: "0.8rem" }
     },
 
     TodayTask__Text: {
         fontWeight: '700',
         cursor: 'pointer',
-        fontSize: { lg: "1.2rem", xs:"0.8rem"}
+        fontSize: { lg: "1.2rem", xs: "0.8rem" }
     },
 
     UpcomingTask__Text: {
         fontWeight: '700',
         cursor: 'pointer',
-        fontSize: { lg: "1.2rem", xs:"0.8rem"}
+        fontSize: { lg: "1.2rem", xs: "0.8rem" }
     },
 
     Header: {
@@ -101,7 +103,7 @@ const style = {
     },
 
     HeaderText: {
-        fontWeight: { lg: '700', xs: "none"},
+        fontWeight: { lg: '700', xs: "none" },
         fontSize: { lg: "1rem", xs: "0.7rem" },
     }
 }
@@ -125,6 +127,7 @@ export default function TaskContainer() {
     const [NTC, setNTC] = useState(false);
     const [TTC, setTTC] = useState(false);
     const [UTC, setUTC] = useState(false);
+    const [ATC, setATC] = useState(false);
 
     const handleClickNTC = () => {
         if (NTC === false) {
@@ -150,6 +153,14 @@ export default function TaskContainer() {
         }
     }
 
+    const handleClickATC = () => {
+        if (ATC === false) {
+            setATC(true);
+        } else if (ATC === true) {
+            setATC(false);
+        }
+    }
+
     return (
         <Box sx={style.root}>
             <Box sx={style.TaskHeader}>
@@ -158,7 +169,7 @@ export default function TaskContainer() {
                     variant='contained'
                     color="secondary"
                     onClick={() => setShow(true)}
-                ><Typography sx={{fontSize: "1rem", color: "white"}}> Add Task </Typography></Button>
+                ><Typography sx={{ fontSize: "1rem", color: "white" }}> Add Task </Typography></Button>
             </Box>
             <AddTask show={show} onClose={() => setShow(false)} />
             <Divider />
@@ -247,6 +258,30 @@ export default function TaskContainer() {
                         } else {
                             return <div key={id}></div>
                         }
+                    })
+                }
+
+            </Box>
+            <Divider />
+            <Box color="text.primary" sx={style.UpcomingTask}>
+                {ATC === false ? (
+                    <ArrowDropUpIcon />
+                ) : (
+                    <ArrowDropDownIcon />
+                )}
+                <Typography color="text.primary" sx={style.UpcomingTask__Text} onClick={handleClickATC}>All Tasks</Typography>
+            </Box>
+            <Box color="text.primary" sx={style.AllTask__List}>
+                {
+                    NTask.map(({ id, data }) => {
+                        return <AllTask
+                            show={ATC}
+                            key={id}
+                            id={id}
+                            Todo={data.Todo}
+                            Date={data.TaskDate}
+                            Category={data.Category}
+                        />
                     })
                 }
 
